@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Animate</title>
+        <style>
+
+            body{
+                font-family: sans-serif;
+                margin:20px;
+            }
+
+            @keyframes move {
+                0% {
+                    left:0%;
+                }
+                50% {
+                    left:40%;
+                }
+                100% {
+                    left:0%;
+                }
+            }
+
+            @keyframes changeColor {
+                from {
+                    background-color: #FFC700;
+                }
+                to {
+                    background-color: #2e89d4;
+                }
+            }
+
+            h1 {
+                position:relative;
+                animation-name: move;
+                animation-duration: 2s;
+                animation-fill-mode: normal;
+                animation-iteration-count: infinite;
+            }
+
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const h1 = document.querySelector("h1");
+                h1.style.animationPlayState = 'paused';
+
+                document.querySelector('button').onclick = () => {
+                    if (h1.style.animationPlayState === 'paused') {
+                        h1.style.animationPlayState = 'running';
+                    } else {
+                        h1.style.animationPlayState = 'paused';
+                    }
+                }
+            })
+        </script>
+    </head>
+    <body>
+        <button>Click Here!</button>
+        <h1>Welcome!</h1>
+    </body>
+</html>
